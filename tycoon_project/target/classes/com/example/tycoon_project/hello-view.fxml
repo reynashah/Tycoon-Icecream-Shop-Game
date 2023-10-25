@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tycoon_project.HelloController">
+   <children>
+      <Label fx:id="balanceLabel" alignment="CENTER" layoutX="866.0" layoutY="14.0" prefHeight="30.0" prefWidth="430.0" text="Bank Account Balance" textAlignment="CENTER" textFill="#5b3e8a" visible="false">
+         <font>
+            <Font name="Bodoni MT" size="26.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="startPane" prefHeight="650.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="back1" fitHeight="650.0" fitWidth="1300.0" onMouseMoved="#setBackground" pickOnBounds="true" />
+            <Label layoutX="92.0" layoutY="14.0" text="Icecreamery Empire">
+               <font>
+                  <Font name="Broadway" size="100.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9605262875556946" green="0.6937134265899658" blue="0.6937134265899658" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.17325339746882737">
+                           <color>
+                              <Color red="0.9956140518188477" green="0.8106265068054199" blue="0.46707817912101746" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.3339968710596366">
+                           <color>
+                              <Color red="0.9036966562271118" green="0.9800000190734863" blue="0.5781999826431274" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.5034850324569188">
+                           <color>
+                              <Color red="0.5781999826431274" green="0.9800000190734863" blue="0.8148370385169983" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.6702003455844581">
+                           <color>
+                              <Color red="0.5781999826431274" green="0.832222580909729" blue="0.9800000190734863" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.8302724980152246">
+                           <color>
+                              <Color red="0.8224759697914124" green="0.6499999761581421" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.6499999761581421" blue="0.8594951629638672" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="37.0" layoutY="129.0" prefHeight="317.0" prefWidth="1225.0" text="The goal of this game is to become a big time entreprenuer by owning and upgrading multiple&#10;Ice Cream shops. You will start as a humble, young business owner, but as time goes on, you will &#10;gain experience and skill. This journey to become a billionaire will not be easy. You will face many &#10;challenges and hard decisions along the way. The question is, will you perservere through difficulty, &#10;or back down and go bankrupt? Let's find out!&#10;&#10;You are from a small town called Huntersville and you want to open an ice cream shop, but your&#10;town already has a booming ice cream shop. Your first task is to take out the competition and then&#10;you can expand to other places. Remember, this is a long journey, so don't let a single misstep&#10;falter your confidence!" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Black" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="startButton" layoutX="520.0" layoutY="502.0" mnemonicParsing="false" onAction="#gameStart" text="Start Game">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="36.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="icecream1" fitHeight="193.0" fitWidth="238.0" layoutX="114.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="icecream2" fitHeight="193.0" fitWidth="238.0" layoutX="943.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" />         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="setupPane" prefHeight="650.0" prefWidth="1300.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="shopscreen" fitHeight="650.0" fitWidth="1300.0" opacity="0.6" pickOnBounds="true" />
+            <Label layoutX="474.0" layoutY="14.0" text="Set up your shop!">
+               <font>
+                  <Font name="Bodoni MT" size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="shopLabel" layoutX="99.0" layoutY="100.0" text="Shop Size:">
+               <font>
+                  <Font name="Bodoni MT Poster Compressed" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="flavorLabel" layoutX="99.0" layoutY="271.0" text="Flavors:">
+               <font>
+                  <Font name="Bodoni MT Poster Compressed" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="equipmentLabel" layoutX="788.0" layoutY="100.0" text="Equipment">
+               <font>
+                  <Font name="Bodoni MT Poster Compressed" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="billsLabel" layoutX="788.0" layoutY="277.0" text="Bills">
+               <font>
+                  <Font name="Bodoni MT Poster Compressed" size="30.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="shopMenu" layoutX="443.0" layoutY="96.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="123.0" text="Shop Size">
+              <items>
+                <MenuItem fx:id="smallShop" mnemonicParsing="false" onAction="#smallShop" text="Small ($80,000)" />
+                <MenuItem fx:id="mediumShop" mnemonicParsing="false" onAction="#mediumShop" text="Medium ($200,000)" />
+                  <MenuItem fx:id="largeShop" mnemonicParsing="false" onAction="#largeShop" text="Large ($500,000)" />
+              </items>
+               <font>
+                  <Font name="Bodoni MT Poster Compressed" size="24.0" />
+               </font>
+            </MenuButton>
+            <ListView fx:id="flavorsMenu" layoutX="460.0" layoutY="271.0" onMouseClicked="#flavorBought" prefHeight="361.0" prefWidth="300.0" visible="false" />
+            <ListView fx:id="boughtFlavorsList" layoutX="193.0" layoutY="271.0" prefHeight="361.0" prefWidth="250.0" visible="false" />
+            <ListView fx:id="equipmentListview" layoutX="876.0" layoutY="59.0" onMouseClicked="#equipmentBought" prefHeight="193.0" prefWidth="402.0" visible="false" />
+            <Button layoutX="950.0" layoutY="585.0" mnemonicParsing="false" onAction="#gamePane" prefHeight="36.0" prefWidth="123.0" text="Start Game">
+               <font>
+                  <Font name="Bodoni MT Poster Compressed" size="24.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="utility1" fitHeight="90.0" fitWidth="110.0" layoutX="840.0" layoutY="270.0" pickOnBounds="true" />
+            <ImageView fx:id="utility2" fitHeight="90.0" fitWidth="110.0" layoutX="840.0" layoutY="380.0" pickOnBounds="true" />
+            <ImageView fx:id="utility3" fitHeight="90.0" fitWidth="110.0" layoutX="840.0" layoutY="490.0" pickOnBounds="true" />
+            <Label fx:id="billLabel1" layoutX="965.0" layoutY="305.0" prefHeight="12.0" prefWidth="320.0" text="BILLS">
+               <font>
+                  <Font name="Felix Titling" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="billLabel2" layoutX="965.0" layoutY="419.0" prefHeight="12.0" prefWidth="320.0" text="BILLS">
+               <font>
+                  <Font name="Felix Titling" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="billLabel3" layoutX="965.0" layoutY="529.0" prefHeight="12.0" prefWidth="320.0" text="BILLS">
+               <font>
+                  <Font name="Felix Titling" size="18.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane fx:id="gamePane" prefHeight="650.0" prefWidth="1300.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="summarypic" fitHeight="495.0" fitWidth="362.0" layoutX="56.0" layoutY="105.0" opacity="0.85" pickOnBounds="true" />
+            <Line endX="363.0" layoutX="56.0" layoutY="601.0" smooth="false" stroke="#6b4375" strokeWidth="3.0" />
+            <Line endX="363.0" layoutX="56.0" layoutY="104.0" stroke="#6b4375" strokeWidth="3.0" />
+            <Line endY="497.0" layoutX="419.0" layoutY="104.0" stroke="#6b4375" strokeWidth="3.0" />
+            <Line endY="497.0" layoutX="56.0" layoutY="104.0" stroke="#6b4375" strokeWidth="3.0" />
+            <Label layoutX="119.0" layoutY="114.0" text="Weekly Summary" textAlignment="CENTER" textFill="#6b4375">
+               <font>
+                  <Font name="Bernard MT Condensed" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="dayofweek" layoutX="80.0" layoutY="169.0" text="Day of Week: Monday" textFill="#ca69bd">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label fx:id="weekspassed" layoutX="80.0" layoutY="229.0" text="Weeks Passed: 0" textFill="#ca69bd">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label fx:id="customers" layoutX="80.0" layoutY="289.0" text="Customers this Week: 0" textFill="#ca69bd">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label fx:id="moneymade" layoutX="80.0" layoutY="349.0" text="Money Made this Week: $0" textFill="#ca69bd">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label fx:id="bills" layoutX="80.0" layoutY="409.0" text="Bills: $650" textFill="#ca69bd">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label fx:id="netprofit" layoutX="80.0" layoutY="529.0" text="Net Profit: $0" textFill="#ca69bd">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font></Label>
+            <Label fx:id="alltimeprofit" layoutX="80.0" layoutY="552.0" text="All Time Profit: $0" textFill="#5d0751">
+               <font>
+                  <Font name="Constantia Bold" size="18.0" />
+               </font></Label>
+            <ListView fx:id="gameScreenEquipmentBuyListview" layoutX="467.0" layoutY="114.0" onMouseClicked="#gameScreenEquipmentBought" prefHeight="230.0" prefWidth="350.0" />
+            <ListView fx:id="gameScreenFlavorBoughtListview" layoutX="467.0" layoutY="369.0" prefHeight="260.0" prefWidth="300.0" />
+            <ListView fx:id="gameScreenFlavorListview" layoutX="792.0" layoutY="369.0" onMouseClicked="#gameScreenFlavorBought" prefHeight="260.0" prefWidth="300.0" />
+            <Button fx:id="investmentButton" layoutX="892.0" layoutY="301.0" mnemonicParsing="false" onAction="#investmentCalc" prefHeight="45.0" prefWidth="200.0" text="Make an Investment!!">
+               <font>
+                  <Font name="Lucida Bright Demibold" size="16.0" />
+               </font>
+            </Button>
+            <MenuButton layoutX="892.0" layoutY="114.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" text="Shop Size Upgrade">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#smallShop" text="Small ($80,000)" />
+                <MenuItem mnemonicParsing="false" onAction="#mediumShop" text="Medium ($200,000)" />
+                  <MenuItem mnemonicParsing="false" onAction="#largeShop" text="Large ($500,000)" />
+              </items>
+               <font>
+                  <Font name="Lucida Bright Demibold" size="16.0" />
+               </font>
+            </MenuButton>
+            <Label layoutX="892.0" layoutY="169.0" text="Daily Customer Limit:&#10;&#10;Small shop:  300&#10;&#10;Medium shop:  650&#10;&#10;Large shop:  1000" textFill="#7d6290">
+               <font>
+                  <Font name="Lucida Bright" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="shopname" alignment="TOP_CENTER" layoutX="262.0" layoutY="10.0" prefHeight="15.0" prefWidth="800.0" text="Label">
+               <font>
+                  <Font name="HP Simplified Light" size="46.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9830247163772583" green="0.9320987462997437" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007653061224489797">
+                           <color>
+                              <Color red="0.8865740895271301" green="0.5462962985038757" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007653061224489797">
+                           <color>
+                              <Color red="0.9481481313705444" green="0.7777777910232544" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.4977116704805492">
+                           <color>
+                              <Color red="0.9441872239112854" green="0.3302469253540039" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8836933970451355" green="0.003086419776082039" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="username" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="262.0" layoutY="61.0" prefHeight="15.0" prefWidth="800.0" text="Label" textAlignment="CENTER">
+               <font>
+                  <Font name="HP Simplified Light" size="36.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9830247163772583" green="0.9320987462997437" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007653061224489797">
+                           <color>
+                              <Color red="0.9746153950691223" green="0.9399999976158142" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007653061224489797">
+                           <color>
+                              <Color red="0.8282955884933472" green="0.623795211315155" blue="0.9956140518188477" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.34209942558258993">
+                           <color>
+                              <Color red="0.7566688656806946" green="0.4465000033378601" blue="0.949999988079071" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.7099308831083921">
+                           <color>
+                              <Color red="0.6129231452941895" green="0.23999999463558197" blue="0.9599999785423279" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.3044590651988983" blue="0.5219298005104065" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="cogsLabel" layoutX="81.0" layoutY="469.0" text="COGS: $0" textFill="#ca69bd">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loseScreen" prefHeight="650.0" prefWidth="1300.0" visible="false">
+         <children>
+            <ImageView fx:id="loseBack" fitHeight="650.0" fitWidth="1300.0" opacity="0.7" pickOnBounds="true" />
+            <Button layoutX="378.0" layoutY="231.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="178.0" prefWidth="544.0" text="Play Again">
+               <font>
+                  <Font size="88.0" />
+               </font>
+            </Button>
+            <Label alignment="TOP_CENTER" layoutY="14.0" prefHeight="20.0" prefWidth="1300.0" text="YOU WENT BANKRUPT :(" textFill="#870000">
+               <font>
+                  <Font size="82.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" layoutY="134.0" text="Your Bank Account Balance went below zero!" textFill="#9b0101">
+               <font>
+                  <Font name="Perpetua Bold" size="62.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="winScreen" prefHeight="650.0" prefWidth="1300.0" visible="false">
+         <children>
+            <ImageView fx:id="winBack" fitHeight="650.0" fitWidth="1300.0" opacity="0.65" pickOnBounds="true" />
+            <Label layoutY="14.0" prefHeight="25.0" prefWidth="1300.0" text="YOU ARE A BIG TIME BUSINESSMAN!" textFill="#0f4609">
+               <font>
+                  <Font name="Perpetua Bold" size="82.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="115.0" text="Your Bank Balance exceeded $10,000,000" textFill="#519064">
+               <font>
+                  <Font name="Perpetua Bold" size="72.0" />
+               </font>
+            </Label>
+            <Button layoutX="378.0" layoutY="262.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="178.0" prefWidth="544.0" text="Play Again">
+               <font>
+                  <Font size="88.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
